@@ -1,0 +1,39 @@
+package atm.machine;
+
+import java.io.*;
+public class withdraw extends checkBal {
+	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static int withdrawn, remainingBal;
+	
+	public static void getWithdraw() throws IOException{
+		System.out.println("==================================================");
+		System.out.println("How much would you like to withdraw? ");
+		System.out.println("==================================================");
+		withdrawn = Integer.parseInt(br.readLine());
+		remainingBal = balance - withdrawn;
+		
+		if(balance <= 0) {
+			System.out.println("==================================================");
+			System.out.println("Invalid Action" + "\n"
+								+ "The balance of your account is only " + balance + " Php" );
+			System.out.println("==================================================");
+		}
+		else if(remainingBal >= 100 && withdrawn < balance){
+			balance = balance - withdrawn;
+			System.out.println("==================================================");
+			System.out.println("You have withdrawn " + withdrawn + "Php");
+			System.out.println("==================================================");
+			System.out.println("Your remaining balance is " + remainingBal + "Php");
+			System.out.println("==================================================");
+		}
+		else{
+			System.out.println("==================================================");
+			System.out.println("Invalid Action" + "\n"
+								+ "The balance of your account is only " + balance + " Php" );
+			System.out.println("Note: Your account must maintain a balance of 100 Php");
+			System.out.println("==================================================");
+		}	
+			
+		
+	}
+}
