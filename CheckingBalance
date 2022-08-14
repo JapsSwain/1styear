@@ -1,0 +1,11 @@
+package atm.machine;
+
+import java.io.*;
+public class checkBal {
+	//current balance
+	public static int balance = 0; 
+	//display balance
+	public static void checkBal(){
+		System.out.println("==================================================");
+		System.out.println("Your Balance is " + balance + " Php");
+		System.out.println("==================================================");
